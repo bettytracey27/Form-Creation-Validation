@@ -6,14 +6,13 @@ async function fetchUserData() {
         const response = await fetch(apiUrl);
         const users = await response.json();
 
-        dataContainer.innerHTML = ''; // Clear loading message
+        dataContainer.innerHTML = '';
 
         const userList = document.createElement('ul');
-
         users.forEach(user => {
-            const li = document.createElement('li');
-            li.textContent = user.name;
-            userList.appendChild(li);
+            const listItem = document.createElement('li');
+            listItem.textContent = user.name;
+            userList.appendChild(listItem);
         });
 
         dataContainer.appendChild(userList);
@@ -23,5 +22,5 @@ async function fetchUserData() {
     }
 }
 
-// Run fetchUserData after the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', fetchUserData);
+
