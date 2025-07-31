@@ -10,9 +10,9 @@ async function fetchUserData() {
 
         const userList = document.createElement('ul');
         users.forEach(user => {
-            const listItem = document.createElement('li');
-            listItem.textContent = user.name;
-            userList.appendChild(listItem);
+            const li = document.createElement('li');
+            li.textContent = user.name;
+            userList.appendChild(li);
         });
 
         dataContainer.appendChild(userList);
@@ -23,4 +23,5 @@ async function fetchUserData() {
 }
 
 document.addEventListener('DOMContentLoaded', fetchUserData);
+
 
